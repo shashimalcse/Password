@@ -12,6 +12,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     float newDegree;
     private String Password;
     private String Color;
+    private int Current;
+    private int Color_Index;
+    String Match_Pass;
+    char[] Pass_Array;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         Color = intent.getStringExtra("Color");
         Password = intent.getStringExtra("Password");
-        char[] Pass_Array = Password.toCharArray();
+        Pass_Array = Password.toCharArray();
         Pass_Array = RandomizeArray(Pass_Array);
         ArrayList<TextView> Numbers = new ArrayList<>();
         Numbers.add((TextView) findViewById(R.id.textView));
@@ -49,11 +54,27 @@ public class MainActivity extends AppCompatActivity {
         Numbers.add((TextView) findViewById(R.id.textView7));
         Numbers.add((TextView) findViewById(R.id.textView8));
 
+
+        ArrayList<String> Colors = new ArrayList<>();
+        Colors.add("Purple");
+        Colors.add("Red");
+        Colors.add("Orange");
+        Colors.add("Yellow");
+        Colors.add("Green");
+        Colors.add("Green_Blue");
+        Colors.add("Blue");
+        Colors.add("Dark_Blue");
+
+        Color_Index = Colors.indexOf(Color)+1;
+
+        Match_Pass = "";
+
+
         for (int i=0;i<Pass_Array.length;i++){
             Numbers.get(i).setText(Character.toString(Pass_Array[i]));
         }
 
-
+        Current =0;
         wheel = (ImageView) findViewById(R.id.wheel);
 
         buttonLeft = (Button) findViewById(R.id.buttonLeft);
@@ -70,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
                 spin(oldDegree,d);
                 oldDegree=d;
                 newDegree+=45;
+                if(Color_Index>=7){
+                    Color_Index=0;
+                }
+                else{
+                    Color_Index++;
+                }
+                Log.d("s",Integer.toString(Color_Index));
+
             }
         });
 
@@ -80,6 +109,25 @@ public class MainActivity extends AppCompatActivity {
                 spin(oldDegree,d);
                 oldDegree=d;
                 newDegree-=45;
+                if(Color_Index<=-7){
+                    Color_Index=0;
+                }
+                else{
+                    Color_Index--;
+                }
+                Log.d("s",Integer.toString(Color_Index));
+
+            }
+        });
+
+        Confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Match_Pass!=Password && Match_Pass.length()!=Password.length()){
+                    Match_Pass+=Pass_Array[Color_Index];
+                    Log.d("a",Match_Pass);
+                }
+
             }
         });
 
@@ -125,4 +173,6 @@ public class MainActivity extends AppCompatActivity {
 
         return array;
     }
+
+
 }
