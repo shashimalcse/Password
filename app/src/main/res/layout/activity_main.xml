@@ -18,11 +18,11 @@
 
     <Button
         android:id="@+id/buttonRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
         android:layout_marginEnd="76dp"
         android:layout_marginRight="76dp"
-        android:text="Button"
+        android:background="@drawable/left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/buttonLeft"
@@ -31,11 +31,11 @@
 
     <Button
         android:id="@+id/buttonLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="54dp"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
-        android:text="Button"
+        android:background="@drawable/right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@id/buttonRight"
         app:layout_constraintStart_toStartOf="parent"

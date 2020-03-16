@@ -123,9 +123,15 @@ public class MainActivity extends AppCompatActivity {
         Confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Match_Pass!=Password && Match_Pass.length()!=Password.length()){
+                if(Match_Pass.length()<Password.length()){
                     Match_Pass+=Pass_Array[Color_Index];
                     Log.d("a",Match_Pass);
+                }
+                else if(Match_Pass.equals(Password)){
+                    Log.d("S","Succes");
+                }
+                else if(!Match_Pass.equals(Password)){
+                    Log.d("S","NOt Succes");
                 }
 
             }
