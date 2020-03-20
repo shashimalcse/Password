@@ -20,6 +20,7 @@ public class PasswordSizeActivity extends AppCompatActivity {
 
         Button four = (Button) findViewById(R.id.colorfourbtn);
         Button six = (Button) findViewById(R.id.colorsixbtn);
+        Button eight = (Button) findViewById(R.id.coloreightbtn);
 
 
 
@@ -42,6 +43,18 @@ public class PasswordSizeActivity extends AppCompatActivity {
                 fm = getSupportFragmentManager();
                 ft = fm.beginTransaction();
                 fragment = new ColorSix();
+                ft.replace(R.id.frag,fragment);
+                ft.commit();
+
+            }
+        });
+
+        eight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fm = getSupportFragmentManager();
+                ft = fm.beginTransaction();
+                fragment = new ColorEight();
                 ft.replace(R.id.frag,fragment);
                 ft.commit();
 
