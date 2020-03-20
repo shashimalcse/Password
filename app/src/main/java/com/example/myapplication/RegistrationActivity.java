@@ -11,9 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-public class RegistationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class RegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String color;
     @Override
@@ -39,7 +38,7 @@ public class RegistationActivity extends AppCompatActivity implements AdapterVie
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistationActivity.this,MainActivity.class);
+                Intent intent = new Intent(RegistrationActivity.this,MainActivity.class);
                 intent.putExtra("Password",Password.getText().toString());
                 intent.putExtra("Color",color);
                 startActivity(intent);

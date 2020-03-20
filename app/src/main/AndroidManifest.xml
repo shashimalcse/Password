@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ConfirmPasswordActivity"></activity>
         <activity android:name=".EnterPasswordActivity" />
-        <activity android:name=".RegistationActivity" />
+        <activity android:name=".RegistrationActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PasswordSizeActivity">
             <intent-filter>
