@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -15,11 +17,16 @@ public class ConfirmPasswordActivity extends AppCompatActivity {
     private Pinview pin;
     private String Password;
     private String Confirm;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_password);
+
+        pref = getSharedPreferences("com.android.app.users", Context.MODE_PRIVATE);
+        editor =pref.edit();
 
         Intent intent = getIntent();
 
@@ -39,7 +46,11 @@ public class ConfirmPasswordActivity extends AppCompatActivity {
             public void onDataEntered(Pinview pinview, boolean fromUser) {
                 Confirm = pin.getValue();
                 if (Password.equals(Confirm)){
-                    Toast t = Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_SHORT);
+                    editor.putString("Password",Password);
+                    editor.putInt("PasswordSize",Integer.parseInt(PasswordSize));
+                    editor.putString("Color",Color);
+                    editor.apply();
+                    Toast t = Toast.makeText(getApplicationContext(),pref.getString("Password",null),Toast.LENGTH_SHORT);
                     t.show();
                 }
                 else {
