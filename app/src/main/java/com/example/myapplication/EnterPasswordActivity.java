@@ -42,6 +42,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
                 i.putExtra("PasswordSize",PasswordSize);
                 i.putExtra("Color",Color);
                 i.putExtra("Password",pin.getValue());
+                startActivity(i);
             }
         });
     }
