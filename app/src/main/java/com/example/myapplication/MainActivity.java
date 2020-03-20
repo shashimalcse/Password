@@ -12,9 +12,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Pass_Array = Password.toCharArray();
         Pass_Array = RandomizeArray(Pass_Array);
         ArrayList<TextView> Numbers = new ArrayList<>();
-        Numbers.add((TextView) findViewById(R.id.textView));
+        Numbers.add((TextView) findViewById(R.id.textView1));
         Numbers.add((TextView) findViewById(R.id.textView2));
         Numbers.add((TextView) findViewById(R.id.textView3));
         Numbers.add((TextView) findViewById(R.id.textView4));

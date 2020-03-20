@@ -3,7 +3,9 @@
     package="com.example.grappass">
 
     <application>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".EnterPasswordActivity"></activity>
+        <activity android:name=".PasswordSizeSelectionActivity" />
+        <activity android:name=".ExplainActivity" />
         <activity android:name=".RegistrationActivity" />
     </application>
 

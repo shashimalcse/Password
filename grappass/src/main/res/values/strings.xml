@@ -1,1 +1,5 @@
-<resources></resources>
+<resources>
+    <string name="password_size_4">4</string>
+    <string name="password_size_6">6</string>
+    <string name="password_size_8">8</string>
+</resources>
