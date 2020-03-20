@@ -19,7 +19,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_enterpassword);
 
 
-        TextView color = (TextView) findViewById(R.id.colorview);
+        TextView color = (TextView) findViewById(R.id.EnterDescription);
         pin = (Pinview) findViewById(R.id.pinview1);
 
 

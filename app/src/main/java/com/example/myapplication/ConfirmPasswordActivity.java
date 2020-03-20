@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.goodiebag.pinview.Pinview;
@@ -27,6 +28,9 @@ public class ConfirmPasswordActivity extends AppCompatActivity {
 
         pref = getSharedPreferences("com.android.app.users", Context.MODE_PRIVATE);
         editor =pref.edit();
+
+        TextView ConfirmDescription = (TextView) findViewById(R.id.ConfirmDescription);
+        ConfirmDescription.setText("Confirm your Password");
 
         Intent intent = getIntent();
 
