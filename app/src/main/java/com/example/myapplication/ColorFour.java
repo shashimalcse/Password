@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -35,7 +34,7 @@ public class ColorFour extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(),LoginActivity.class);
+        Intent intent = new Intent(getActivity(), EnterPasswordActivity.class);
         Password_Size=4;
         switch (v.getId()){
             case R.id.color4_blue:

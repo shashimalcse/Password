@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Switch;
 
 
 public class ColorSix extends Fragment implements View.OnClickListener {
@@ -39,7 +38,7 @@ public class ColorSix extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(),LoginActivity.class);
+        Intent intent = new Intent(getActivity(), EnterPasswordActivity.class);
         Password_Size=6;
         switch (v.getId()){
             case R.id.color6_blue:
