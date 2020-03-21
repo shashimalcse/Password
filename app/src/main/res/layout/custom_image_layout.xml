@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ImageGridActivity">
+    android:orientation="vertical"
+    >
 
-    <GridView
-        android:id="@+id/gridview"
+    <ImageView
+        android:id="@+id/gridimage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:columnWidth="100dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/stawberry">
+
+    </ImageView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
