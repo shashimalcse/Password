@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmPasswordActivity"></activity>
+        <activity android:name=".RegistrationActivity"></activity>
+        <activity android:name=".ConfirmPasswordActivity" />
         <activity android:name=".EnterPasswordActivity" />
-        <activity android:name=".PasswordSizeActivity" />PasswordSizeActivity
+        <activity android:name=".PasswordSizeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".RegistrationActivity">
+        <activity android:name=".SpinActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
