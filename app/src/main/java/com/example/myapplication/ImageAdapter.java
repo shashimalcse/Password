@@ -85,6 +85,9 @@ public class ImageAdapter extends BaseAdapter{
         }
 
     }
+    public ArrayList<Integer> getImageID(){
+        return imageID;
+    }
 
 
 
