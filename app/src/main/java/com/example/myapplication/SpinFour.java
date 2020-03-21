@@ -8,13 +8,14 @@ public class SpinFour extends Spin {
     final ArrayList<String> Colors;
     final int ColorRing;
     final int FruitRing;
+    private int PhaseChange;
 
     public SpinFour() {
         Degree=90;
+        PhaseChange=3;
 
-
-        FruitRing = R.drawable.colorfour;
-        ColorRing = R.drawable.fruitfour;
+        FruitRing = R.drawable.fruitfour;
+        ColorRing = R.drawable.colorfour;
 
 
 
@@ -41,5 +42,9 @@ public class SpinFour extends Spin {
     }
     public ArrayList<String> getColors() {
         return Colors;
+    }
+
+    public int getPhaseChange() {
+        return PhaseChange;
     }
 }

@@ -3,12 +3,16 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SpinActivity extends AppCompatActivity {
 
@@ -19,13 +23,24 @@ public class SpinActivity extends AppCompatActivity {
     Button SpinConfirm;
     float oldDegree;
     float newDegree;
+    int Size;
+    Spin spin;
+    int Degree;
+    private String UserColor;
+    ArrayList<String> ColorsArray;
+    ArrayList<String> FruitsArray;
+    private int Color_Index;
+    int PhaseChange;
+    private String UserPassword;
+    private String MatchingPassword;
+    int SelectedFruits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spin);
-        ColorSpin = (ImageView) findViewById(R.id.colorringfour);
-        FruitSpin = (ImageView) findViewById(R.id.);
+        ColorSpin = (ImageView) findViewById(R.id.colorspin);
+        FruitSpin = (ImageView) findViewById(R.id.fruitspin);
         SpinLeftBtn = (Button) findViewById(R.id.leftspinbtn);
         SpinRightBtn = (Button) findViewById(R.id.rightspinbtn);
         SpinConfirm = (Button) findViewById(R.id.spinconfirm);
@@ -33,22 +48,54 @@ public class SpinActivity extends AppCompatActivity {
         oldDegree = 0;
         newDegree = 0;
 
-        ColorSpin.setImageDrawable(getResources().getDrawable(R.drawable.colorsix));
+
+        Size=6;
+        UserColor="red";
+        UserPassword="orangeapplecherry";
+        MatchingPassword="";
+        SelectedFruits=0;
+
+
+
+
+        if(Size==4){
+            spin = new SpinFour();
+        }
+        else if(Size==6){
+            spin = new SpinSix();
+        }
+        else {
+            spin = new SpinEight();
+        }
+
+
+        ColorSpin.setImageDrawable(getResources().getDrawable(spin.getColorRing()));
+        FruitSpin.setImageDrawable(getResources().getDrawable(spin.getFruitRing()));
+        Degree = spin.getDegree();
+        ColorsArray = spin.getColors();
+        FruitsArray = spin.getFruits();
+        PhaseChange = spin.getPhaseChange();
+
+
+        Color_Index = ColorsArray.indexOf(UserColor);
+
+
+
 
         SpinRightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float d = newDegree+45;
+                float d = newDegree+Degree;
                 spin(oldDegree,d);
                 oldDegree=d;
-                newDegree+=45;
-//                if(Color_Index>=7){
-//                    Color_Index=0;
-//                }
-//                else{
-//                    Color_Index++;
-//                }
-//                Log.d("s",Integer.toString(Color_Index));
+                newDegree+=Degree;
+                if(Color_Index>=PhaseChange){
+                    Color_Index=0;
+                }
+                else{
+                    Color_Index++;
+                }
+                Log.d("s",Integer.toString(Color_Index));
 
             }
         });
@@ -56,17 +103,17 @@ public class SpinActivity extends AppCompatActivity {
         SpinLeftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float d = newDegree-45;
+                float d = newDegree-Degree;
                 spin(oldDegree,d);
                 oldDegree=d;
-                newDegree-=45;
-//                if(Color_Index<=-7){
-//                    Color_Index=0;
-//                }
-//                else{
-//                    Color_Index--;
-//                }
-//                Log.d("s",Integer.toString(Color_Index));
+                newDegree-=Degree;
+                if(Color_Index<=-PhaseChange){
+                    Color_Index=0;
+                }
+                else{
+                    Color_Index--;
+                }
+                Log.d("s",Integer.toString(Color_Index));
 
             }
         });
@@ -74,16 +121,20 @@ public class SpinActivity extends AppCompatActivity {
         SpinConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(Match_Pass.length()<Password.length()){
-//                    Match_Pass+=Pass_Array[Color_Index];
-//                    Log.d("a",Match_Pass);
-//                }
-//                else if(Match_Pass.equals(Password)){
-//                    Log.d("S","Succes");
-//                }
-//                else if(!Match_Pass.equals(Password)){
-//                    Log.d("S","NOt Succes");
-//                }
+                SelectedFruits++;
+                MatchingPassword+=FruitsArray.get(Color_Index);
+                if(MatchingPassword.equals(UserPassword)){
+                    Toast  t = Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_SHORT);
+                    t.show();
+                }
+
+                else if (!MatchingPassword.equals(UserPassword) && SelectedFruits==FruitsArray.size()){
+                    Toast  t = Toast.makeText(getApplicationContext(),"WRONG",Toast.LENGTH_SHORT);
+                    t.show();
+                    SelectedFruits=0;
+                }
+
+                Log.d("FRUIT",FruitsArray.get(Color_Index));
 
             }
         });
@@ -119,6 +170,6 @@ public class SpinActivity extends AppCompatActivity {
             }
         });
 
-        Spin.startAnimation(rotateAnimation);
+        ColorSpin.startAnimation(rotateAnimation);
     }
 }

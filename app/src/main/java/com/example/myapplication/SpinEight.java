@@ -11,12 +11,15 @@ public class SpinEight extends Spin{
     final ArrayList<String> Colors;
     final int ColorRing;
     final int FruitRing;
+    private int PhaseChange;
 
     public SpinEight() {
         Degree=45;
+        PhaseChange=7;
 
-        FruitRing = R.drawable.coloreight;
-        ColorRing = R.drawable.fruiteight;
+
+        FruitRing = R.drawable.fruiteight;
+        ColorRing = R.drawable.coloreight;
 
 
         Fruits = new ArrayList<>();
@@ -60,5 +63,8 @@ public class SpinEight extends Spin{
 
     public int getFruitRing() {
         return FruitRing;
+    }
+    public int getPhaseChange() {
+        return PhaseChange;
     }
 }

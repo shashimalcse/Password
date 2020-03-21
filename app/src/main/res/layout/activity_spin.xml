@@ -6,26 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".SpinActivity">
 
+
     <ImageView
-        android:id="@+id/colorringfour"
+        android:id="@+id/colorspin"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="170dp"
+        android:scaleX="1.33"
+        android:scaleY="1.33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/colorfour" />
 
     <ImageView
-        android:id="@+id/fruitringfour"
-        android:layout_width="wrap_content"
-        android:layout_height="731dp"
+        android:id="@+id/fruitspin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="170dp"
+        android:scaleX="1.33"
+        android:scaleY="1.33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fruitfour" />
-
 
     <Button
         android:id="@+id/leftspinbtn"
@@ -66,9 +76,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/colorringfour"
+        app:layout_constraintTop_toTopOf="@+id/colorspin"
         app:layout_constraintVertical_bias="0.929"
         android:background="#212121"
-        android:text="Comnirm"
+        android:text="Coirm"
         android:textColor="@color/design_default_color_background"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,12 +9,13 @@ public class SpinSix extends Spin{
     final ArrayList<String> Colors;
     final int ColorRing;
     final int FruitRing;
+    private int PhaseChange;
 
     public SpinSix() {
         Degree=60;
-
-        FruitRing = R.drawable.colorsix;
-        ColorRing = R.drawable.fruitsix;
+        PhaseChange=5;
+        FruitRing = R.drawable.fruitsix;
+        ColorRing = R.drawable.colorsix;
 
         Fruits = new ArrayList<>();
         Fruits.add("apple");
@@ -53,5 +54,8 @@ public class SpinSix extends Spin{
     @Override
     public int getFruitRing() {
         return FruitRing;
+    }
+    public int getPhaseChange() {
+        return PhaseChange;
     }
 }

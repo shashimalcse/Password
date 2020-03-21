@@ -9,6 +9,7 @@ public abstract class Spin {
     private ArrayList<String> Colors;
     private int ColorRing;
     private int FruitRing;
+    private int PhaseChange;
 
 
     public int getDegree(){
@@ -28,5 +29,9 @@ public abstract class Spin {
 
     public int getFruitRing() {
         return FruitRing;
+    }
+
+    public int getPhaseChange() {
+        return PhaseChange;
     }
 }
