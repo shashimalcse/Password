@@ -2,62 +2,71 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.Toast;
 
-public class RegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class RegistrationActivity extends AppCompatActivity {
 
-    String color;
+    Button submit;
+    EditText username;
+    EditText email;
+    String Username;
+    String Email;
+
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registation);
 
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        submit = (Button) findViewById(R.id.submit);
+        username = (EditText) findViewById(R.id.username);
+        email = (EditText) findViewById(R.id.email);
+
+        pref = getSharedPreferences("com.android.app.users", Context.MODE_PRIVATE);
+        editor =pref.edit();
 
 
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.colors, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
-        Button submit = (Button) findViewById(R.id.submit);
-        final EditText Password = (EditText) findViewById(R.id.editText2);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this,MainActivity.class);
-                intent.putExtra("Password",Password.getText().toString());
-                intent.putExtra("Color",color);
-                startActivity(intent);
+                Username = username.getText().toString();
+                Email = email.getText().toString();
+                if(Username.matches("") && Email.matches("")){
+                    username.setError("Username not fill");
+                    email.setError("Email not fill");
+                }
+                else if(Username.matches("")){
+                    username.setError("Username not fill");
+                }
+                else if (Email.matches("")){
+                    email.setError("Email not fill");
+                }
+                else{
+                    editor.putString("Email",Email);
+                    editor.putString("Username",Username);
+                    editor.apply();
+                    Toast t = Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT);
+                    t.show();
 
-
-                Log.d("a",Password.getText().toString());
-                Log.d("b",color);
-
+                }
             }
         });
+
+
     }
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-        color = item;
-    }
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-    }
+
 
 }
