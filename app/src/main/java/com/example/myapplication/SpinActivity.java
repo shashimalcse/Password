@@ -49,7 +49,7 @@ public class SpinActivity extends AppCompatActivity {
         newDegree = 0;
 
 
-        Size=6;
+        Size=8;
         UserColor="red";
         UserPassword="orangeapplecherry";
         MatchingPassword="";
