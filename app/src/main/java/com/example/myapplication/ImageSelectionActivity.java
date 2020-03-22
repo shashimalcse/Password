@@ -23,11 +23,12 @@ public class ImageSelectionActivity extends AppCompatActivity {
 
     GridView gridView;
     ArrayList<Integer> FruitsArray;
-    int nPrevSelGridItem;
-    ArrayList<View> Selected;
     ArrayList<Integer> SelectedPositions;
     Button Confirm;
     Button Remove;
+    int Size;
+    String SelectedColor;
+    private String Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +37,14 @@ public class ImageSelectionActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridview);
         Confirm = (Button) findViewById(R.id.fruitsconfirmbtn);
         Remove = (Button) findViewById(R.id.fruitsremovebtn);
+        Size=6;
+        SelectedColor="blue";
 
 
 
+        gridView.setNumColumns(Size/2);
 
-        gridView.setNumColumns(3);
-
-        final ImageAdapter imageAdapter = new ImageAdapter(this,6);
+        final ImageAdapter imageAdapter = new ImageAdapter(this,Size);
         gridView.setAdapter(imageAdapter);
         FruitsArray = imageAdapter.getImageID();
 
@@ -78,7 +80,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Password = "";
+                Password = "";
                 int PasswordSize = SelectedPositions.size();
                 for(int i=0;i<SelectedPositions.size();i++){
 
@@ -87,7 +89,12 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 }
                 Log.d("s",Password);
 
-                Intent intent = new Intent()
+                Intent intent = new Intent(ImageSelectionActivity.this,ImageConfirmationActivity.class);
+                intent.putExtra("Size",Integer.toString(Size));
+                intent.putExtra("SelectedColor",SelectedColor);
+                intent.putExtra("Password",Password);
+                intent.putExtra("PasswordSize",Integer.toString(PasswordSize));
+                startActivity(intent);
             }
         });
 
