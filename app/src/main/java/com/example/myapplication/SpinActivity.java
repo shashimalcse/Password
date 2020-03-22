@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,9 +49,9 @@ public class SpinActivity extends AppCompatActivity {
         oldDegree = 0;
         newDegree = 0;
 
-
-        Size=8;
-        UserColor="red";
+        Intent intent =getIntent();
+        Size=Integer.parseInt(intent.getStringExtra("PasswordSize"));
+        UserColor=intent.getStringExtra("Color");
         UserPassword="orangeapplecherry";
         MatchingPassword="";
         SelectedFruits=0;

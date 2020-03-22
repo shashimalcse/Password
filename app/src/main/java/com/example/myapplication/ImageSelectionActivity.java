@@ -37,8 +37,10 @@ public class ImageSelectionActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridview);
         Confirm = (Button) findViewById(R.id.fruitsconfirmbtn);
         Remove = (Button) findViewById(R.id.fruitsremovebtn);
-        Size=6;
-        SelectedColor="blue";
+
+        Intent intent = getIntent();
+        Size=Integer.parseInt(intent.getStringExtra("PasswordSize"));;
+        SelectedColor=intent.getStringExtra("Color");
 
 
 

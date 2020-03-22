@@ -60,6 +60,8 @@ public class RegistrationActivity extends AppCompatActivity {
                     editor.apply();
                     Toast t = Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT);
                     t.show();
+                    Intent i = new Intent(RegistrationActivity.this,PasswordSizeActivity.class);
+                    startActivity(i);
 
                 }
             }

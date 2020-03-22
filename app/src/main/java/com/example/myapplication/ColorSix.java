@@ -38,7 +38,7 @@ public class ColorSix extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), EnterPasswordActivity.class);
+        Intent intent = new Intent(getActivity(), ImageSelectionActivity.class);
         Password_Size=6;
         switch (v.getId()){
             case R.id.color6_blue:

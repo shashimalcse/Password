@@ -12,12 +12,12 @@
         <activity android:name=".SuccessActivity"></activity>
         <activity android:name=".ImageConfirmationActivity" />
         <activity android:name=".SpinActivity" />
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".ImageSelectionActivity" />
         <activity android:name=".ConfirmPasswordActivity" />
         <activity android:name=".EnterPasswordActivity" />
         <activity android:name=".PasswordSizeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ImageSelectionActivity">
+        <activity android:name=".RegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
