@@ -28,7 +28,7 @@ public class ColorSix extends Fragment implements View.OnClickListener {
         yellow.setOnClickListener(this);
         Button green = (Button) view.findViewById(R.id.color6_green);
         green.setOnClickListener(this);
-        Button orange = (Button) view.findViewById(R.id.color6_orange);
+        Button orange = (Button) view.findViewById(R.id.color6_pink);
         orange.setOnClickListener(this);
         Button purple = (Button) view.findViewById(R.id.color6_purple);
         purple.setOnClickListener(this);
@@ -42,31 +42,31 @@ public class ColorSix extends Fragment implements View.OnClickListener {
         Password_Size=6;
         switch (v.getId()){
             case R.id.color6_blue:
-                Color="Blue";
+                Color="blue";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color6_red:
-                Color="Red";
+                Color="red";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color6_yellow:
-                Color="Yellow";
+                Color="yellow";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color6_green:
-                Color="Green";
+                Color="green";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
-            case R.id.color6_orange:
-                Color="Orange";
+            case R.id.color6_pink:
+                Color="pink";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);

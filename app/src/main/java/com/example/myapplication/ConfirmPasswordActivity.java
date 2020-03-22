@@ -40,7 +40,7 @@ public class ConfirmPasswordActivity extends AppCompatActivity {
 
         pin = (Pinview) findViewById(R.id.pinview2);
 
-        pin.setPinLength(Integer.parseInt(PasswordSize));
+        pin.setPinLength(4);
         if(Integer.parseInt(PasswordSize)==8){
             pin.setSplitWidth(10);
         }

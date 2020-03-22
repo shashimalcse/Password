@@ -27,7 +27,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
         PasswordSize = intent.getStringExtra("PasswordSize");
         Color = intent.getStringExtra("Color");
         Log.d("s",PasswordSize);
-        pin.setPinLength(Integer.parseInt(PasswordSize));
+        pin.setPinLength(4);
         if(Integer.parseInt(PasswordSize)==8){
             pin.setSplitWidth(10);
         }

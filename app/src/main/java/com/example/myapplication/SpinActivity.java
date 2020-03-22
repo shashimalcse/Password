@@ -70,16 +70,17 @@ public class SpinActivity extends AppCompatActivity {
         else if(Size==6){
             spin = new SpinSix();
         }
-        else {
+        else if (Size==8){
             spin = new SpinEight();
         }
 
-        Log.d("s",Integer.toString(spin.getColorRing()));
+
 
 
         ColorSpin.setImageDrawable(getResources().getDrawable(spin.getColorRing()));
         Log.d("s","cccccccc");
         FruitSpin.setImageDrawable(getResources().getDrawable(spin.getFruitRing()));
+        Log.d("s",Integer.toString(Size));
         Log.d("s","bbbbbbbb");
         Degree = spin.getDegree();
         ColorsArray = spin.getColors();
@@ -132,17 +133,26 @@ public class SpinActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SelectedFruits++;
+                if(Color_Index<0){
+                    Color_Index=Size+Color_Index
+;                }
+
                 MatchingPassword+=FruitsArray.get(Color_Index);
                 if(MatchingPassword.equals(UserPassword)){
                     Toast  t = Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_SHORT);
                     t.show();
+                    Intent intent = new Intent(SpinActivity.this,SuccessActivity.class);
+                    startActivity(intent);
+
                 }
 
                 else if (!MatchingPassword.equals(UserPassword) && SelectedFruits==FruitsArray.size()){
                     Toast  t = Toast.makeText(getApplicationContext(),"WRONG",Toast.LENGTH_SHORT);
                     t.show();
                     SelectedFruits=0;
+                    MatchingPassword="";
                 }
+
 
                 Log.d("FRUIT",FruitsArray.get(Color_Index));
 

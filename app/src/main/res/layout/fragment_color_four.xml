@@ -21,32 +21,32 @@
             android:id="@+id/color4_red"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="@color/design_default_color_error"
-            android:padding="40dp"/>
+            android:background="#ff012b"
+            android:padding="40dp" />
 
         <Button
             android:id="@+id/color4_blue"
             android:layout_row="0"
             android:layout_column="1"
 
-            android:background="@color/colorPrimaryDark"
+            android:background="#0101ff"
             android:padding="40dp" />
 
         <Button
-            android:id="@+id/color4_orange"
+            android:id="@+id/color4_green"
             android:layout_row="1"
 
             android:layout_column="0"
-            android:background="?android:attr/colorActivatedHighlight"
+            android:background="#0ca41c"
             android:padding="40dp" />
 
         <Button
-            android:id="@+id/color4_purple"
+            android:id="@+id/color4_yellow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="1"
-            android:background="@android:color/holo_purple"
+            android:background="#fbff01"
             android:padding="40dp" />
 
     </GridLayout>

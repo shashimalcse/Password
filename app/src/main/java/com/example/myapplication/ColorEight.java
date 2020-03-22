@@ -36,7 +36,7 @@ public class ColorEight extends Fragment implements View.OnClickListener {
         green.setOnClickListener(this);
         Button black = (Button) view.findViewById(R.id.color8_black);
         black.setOnClickListener(this);
-        Button gray = (Button) view.findViewById(R.id.color8_gray);
+        Button gray = (Button) view.findViewById(R.id.color8_pink);
         gray.setOnClickListener(this);
 
         return view;
@@ -48,49 +48,49 @@ public class ColorEight extends Fragment implements View.OnClickListener {
         Password_Size=8;
         switch (v.getId()){
             case R.id.color8_blue:
-                Color="Blue";
+                Color="blue";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_red:
-                Color="Red";
+                Color="red";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_orange:
-                Color="Orange";
+                Color="orange";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_purple:
-                Color="Purple";
+                Color="purple";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_green:
-                Color="Green";
+                Color="green";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_yellow:
-                Color="Yellow";
+                Color="yellow";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color8_black:
-                Color="Black";
+                Color="black";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
-            case R.id.color8_gray:
-                Color="Gray";
+            case R.id.color8_pink:
+                Color="pink";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);

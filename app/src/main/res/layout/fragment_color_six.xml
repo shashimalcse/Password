@@ -22,7 +22,7 @@
             android:id="@+id/color6_red"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="@color/design_default_color_error"
+            android:background="#ff012b"
             android:padding="40dp" />
 
         <Button
@@ -30,7 +30,7 @@
             android:layout_row="0"
             android:layout_column="1"
 
-            android:background="@color/colorPrimaryDark"
+            android:background="#0101ff"
             android:padding="40dp" />
 
         <Button
@@ -38,29 +38,29 @@
             android:layout_row="1"
 
             android:layout_column="0"
-            android:background="@android:color/holo_orange_light"
+            android:background="#fbff01"
             android:padding="40dp" />
 
         <Button
             android:id="@+id/color6_green"
             android:layout_row="1"
             android:layout_column="1"
-            android:background="@android:color/holo_green_light"
+            android:background="#0ca41c"
             android:padding="40dp" />
 
         <Button
-            android:id="@+id/color6_orange"
+            android:id="@+id/color6_pink"
             android:layout_row="1"
 
             android:layout_column="2"
-            android:background="?android:attr/colorActivatedHighlight"
+            android:background="#fa008c"
             android:padding="40dp" />
 
         <Button
             android:id="@+id/color6_purple"
             android:layout_row="0"
             android:layout_column="2"
-            android:background="@android:color/holo_purple"
+            android:background="#ce00fa"
             android:padding="40dp" />
 
     </GridLayout>

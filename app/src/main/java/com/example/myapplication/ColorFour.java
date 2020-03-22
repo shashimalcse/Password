@@ -24,9 +24,9 @@ public class ColorFour extends Fragment implements View.OnClickListener {
         blue.setOnClickListener(this);
         Button red = (Button) view.findViewById(R.id.color4_red);
         red.setOnClickListener(this);
-        Button orange = (Button) view.findViewById(R.id.color4_orange);
+        Button orange = (Button) view.findViewById(R.id.color4_green);
         orange.setOnClickListener(this);
-        Button purple = (Button) view.findViewById(R.id.color4_purple);
+        Button purple = (Button) view.findViewById(R.id.color4_yellow);
         purple.setOnClickListener(this);
 
         return view;
@@ -49,13 +49,13 @@ public class ColorFour extends Fragment implements View.OnClickListener {
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
-            case R.id.color4_orange:
+            case R.id.color4_green:
                 Color="green";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
-            case R.id.color4_purple:
+            case R.id.color4_yellow:
                 Color="yellow";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
