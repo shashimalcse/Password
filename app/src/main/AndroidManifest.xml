@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PinUnlockActivity"></activity>
-        <activity android:name=".SuccessActivity" />
+        <activity android:name=".SuccessActivity"/>
         <activity android:name=".ImageConfirmationActivity" />
-        <activity android:name=".SpinActivity" />
+        <activity android:name=".SpinActivity"/>
         <activity android:name=".ImageSelectionActivity" />
         <activity android:name=".ConfirmPasswordActivity" />
         <activity android:name=".EnterPasswordActivity" />

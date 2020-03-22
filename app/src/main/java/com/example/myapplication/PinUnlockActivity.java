@@ -41,6 +41,7 @@ public class PinUnlockActivity extends AppCompatActivity {
                     t.show();
                     Intent i = new Intent(PinUnlockActivity.this,SuccessActivity.class);
                     startActivity(i);
+                    finish();
                 }
                 else {
                     Toast t = Toast.makeText(getApplicationContext(),"NOT MATCH",Toast.LENGTH_SHORT);
