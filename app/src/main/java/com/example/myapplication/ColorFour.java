@@ -38,25 +38,25 @@ public class ColorFour extends Fragment implements View.OnClickListener {
         Password_Size=4;
         switch (v.getId()){
             case R.id.color4_blue:
-                Color="Blue";
+                Color="blue";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color4_red:
-                Color="Red";
+                Color="red";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color4_orange:
-                Color="Orange";
+                Color="green";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);
                 break;
             case R.id.color4_purple:
-                Color="Purple";
+                Color="yellow";
                 intent.putExtra("PasswordSize",Integer.toString(Password_Size));
                 intent.putExtra("Color",Color);
                 startActivity(intent);

@@ -8,6 +8,17 @@ public class SpinFour extends Spin {
     final ArrayList<String> Colors;
     final int ColorRing;
     final int FruitRing;
+
+    @Override
+    public int getColorRing() {
+        return ColorRing;
+    }
+
+    @Override
+    public int getFruitRing() {
+        return FruitRing;
+    }
+
     private int PhaseChange;
 
     public SpinFour() {

@@ -56,6 +56,8 @@ public class ConfirmPasswordActivity extends AppCompatActivity {
                     editor.apply();
                     Toast t = Toast.makeText(getApplicationContext(),pref.getString("Password",null),Toast.LENGTH_SHORT);
                     t.show();
+                    Intent i = new Intent(ConfirmPasswordActivity.this,SpinActivity.class);
+                    startActivity(i);
                 }
                 else {
                     Toast t = Toast.makeText(getApplicationContext(),"NOT MATCH",Toast.LENGTH_SHORT);

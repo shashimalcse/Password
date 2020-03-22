@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +37,8 @@ public class SpinActivity extends AppCompatActivity {
     private String UserPassword;
     private String MatchingPassword;
     int SelectedFruits;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +53,11 @@ public class SpinActivity extends AppCompatActivity {
         oldDegree = 0;
         newDegree = 0;
 
-        Intent intent =getIntent();
-        Size=Integer.parseInt(intent.getStringExtra("PasswordSize"));
-        UserColor=intent.getStringExtra("Color");
-        UserPassword="orangeapplecherry";
+        pref = getSharedPreferences("com.android.app.users", Context.MODE_PRIVATE);
+
+        Size=pref.getInt("PasswordSize",-1);
+        UserColor=pref.getString("Color",null);
+        UserPassword=pref.getString("GraphicalPassword",null);
         MatchingPassword="";
         SelectedFruits=0;
 
@@ -69,9 +74,13 @@ public class SpinActivity extends AppCompatActivity {
             spin = new SpinEight();
         }
 
+        Log.d("s",Integer.toString(spin.getColorRing()));
+
 
         ColorSpin.setImageDrawable(getResources().getDrawable(spin.getColorRing()));
+        Log.d("s","cccccccc");
         FruitSpin.setImageDrawable(getResources().getDrawable(spin.getFruitRing()));
+        Log.d("s","bbbbbbbb");
         Degree = spin.getDegree();
         ColorsArray = spin.getColors();
         FruitsArray = spin.getFruits();

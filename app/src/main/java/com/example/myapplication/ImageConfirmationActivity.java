@@ -96,11 +96,16 @@ public class ImageConfirmationActivity extends AppCompatActivity {
                 if(PasswordSize==SelectedPasswordSize && Password.equals(SelectedPassword)){
 
                     editor.putString("GraphicalPassword",SelectedPassword);
-                    editor.putString("GraphicalPasswordSize",Integer.toString(PasswordSize));
+                    editor.putString("GraphicalPasswordSize",Integer.toString(SelectedPasswordSize));
                     editor.apply();
 
                     Toast t = Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT);
                     t.show();
+
+                    Intent i = new Intent(ImageConfirmationActivity.this,EnterPasswordActivity.class);
+                    i.putExtra("PasswordSize",Integer.toString(Size));
+                    i.putExtra("Color",SelectedColor);
+                    startActivity(i);
                 }
                 else{
                     Toast t = Toast.makeText(getApplicationContext(),"Not Match",Toast.LENGTH_SHORT);
