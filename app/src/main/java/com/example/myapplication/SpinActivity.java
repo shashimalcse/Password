@@ -13,7 +13,10 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -39,6 +42,7 @@ public class SpinActivity extends AppCompatActivity {
     int SelectedFruits;
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
+    TextView FruitCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class SpinActivity extends AppCompatActivity {
         SpinLeftBtn = (Button) findViewById(R.id.leftspinbtn);
         SpinRightBtn = (Button) findViewById(R.id.rightspinbtn);
         SpinConfirm = (Button) findViewById(R.id.spinconfirm);
+        FruitCount = (TextView) findViewById(R.id.fruitcount);
 
         oldDegree = 0;
         newDegree = 0;
@@ -133,6 +138,7 @@ public class SpinActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SelectedFruits++;
+                FruitCount.setText(Integer.toString(SelectedFruits));
                 if(Color_Index<0){
                     Color_Index=Size+Color_Index
 ;                }
