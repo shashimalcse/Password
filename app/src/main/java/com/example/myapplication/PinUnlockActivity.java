@@ -3,9 +3,11 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.goodiebag.pinview.Pinview;
 
@@ -14,6 +16,7 @@ public class PinUnlockActivity extends AppCompatActivity {
     private String Pin;
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
+    private String Confirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,25 @@ public class PinUnlockActivity extends AppCompatActivity {
         Pin = pref.getString("Password",null);
 
         pin.setPinLength(4);
+
+        pin.setPinViewEventListener(new Pinview.PinViewEventListener() {
+            @Override
+            public void onDataEntered(Pinview pinview, boolean fromUser) {
+                Confirm = pin.getValue();
+                if (Pin.equals(Confirm)){
+                    Toast t = Toast.makeText(getApplicationContext(),pref.getString("Password",null),Toast.LENGTH_SHORT);
+                    t.show();
+                    Intent i = new Intent(PinUnlockActivity.this,SuccessActivity.class);
+                    startActivity(i);
+                }
+                else {
+                    Toast t = Toast.makeText(getApplicationContext(),"NOT MATCH",Toast.LENGTH_SHORT);
+                    t.show();
+                    pin.clearValue();
+                }
+
+            }
+        });
 
 
     }

@@ -43,6 +43,7 @@ public class SpinActivity extends AppCompatActivity {
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
     TextView FruitCount;
+    int Attempts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class SpinActivity extends AppCompatActivity {
         UserPassword=pref.getString("GraphicalPassword",null);
         MatchingPassword="";
         SelectedFruits=0;
+        Attempts=0;
 
 
 
@@ -157,6 +159,12 @@ public class SpinActivity extends AppCompatActivity {
                     t.show();
                     SelectedFruits=0;
                     MatchingPassword="";
+                    Attempts++;
+                }
+
+                if(Attempts>3){
+                    Intent intent = new Intent(SpinActivity.this,PinUnlockActivity.class);
+                    startActivity(intent);
                 }
 
 
