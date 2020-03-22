@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ImageGridActivity">
+    tools:context=".ImageSelectionActivity">
 
     <GridView
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnWidth="100dp"
+
         android:gravity="center"
         android:numColumns="4"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
         app:layout_constraintBottom_toTopOf="@id/fruitsconfirmbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -25,7 +27,7 @@
     </GridView>
 
     <Button
-        android:id="@+id/fruitsconfirmbtn"
+        android:id="@+id/fruitsremovebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -33,14 +35,14 @@
         android:text="remove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/fruitsremovebtn"
+        app:layout_constraintLeft_toRightOf="@+id/fruitsconfirmbtn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.934">
 
     </Button>
 
     <Button
-        android:id="@+id/fruitsremovebtn"
+        android:id="@+id/fruitsconfirmbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -48,7 +50,7 @@
         android:text="confirm"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/fruitsconfirmbtn"
+        app:layout_constraintRight_toLeftOf="@id/fruitsremovebtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.934">
