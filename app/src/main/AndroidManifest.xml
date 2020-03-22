@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SuccessActivity"></activity>
+        <activity android:name=".PinUnlockActivity"></activity>
+        <activity android:name=".SuccessActivity" />
         <activity android:name=".ImageConfirmationActivity" />
         <activity android:name=".SpinActivity" />
         <activity android:name=".ImageSelectionActivity" />
